@@ -95,6 +95,6 @@ jobs:
         run: |
           git config --global user.name "shalin-cloud-devops"
           git config --global user.email "shalin.citi.devops@gmail.com"
-          git add src/kubernetes/productcatalog/deploy.yaml
+          git add kubernetes/productcatalog/deploy.yaml
           git commit -m "Update K8s manifest with new Docker image tag"
           git push origin main
