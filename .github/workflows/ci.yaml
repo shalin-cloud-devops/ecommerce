@@ -63,11 +63,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: Verify files
+        run: |
+          pwd
+          ls -R
+          ls -l src/product-catalog
+
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: src/product-catalog
-          file: Dockerfile
+          context: ./src/product-catalog
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog-service:${{ github.run_number }}
 
