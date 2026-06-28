@@ -79,7 +79,7 @@ jobs:
 
   Update-K8s-Manifest:
     runs-on: ubuntu-latest
-    needs: Docker-Build
+    needs: [build, code-quality, Docker-Build]
 
     steps:
       - name: Code Checkout
