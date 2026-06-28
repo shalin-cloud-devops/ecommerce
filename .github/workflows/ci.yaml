@@ -85,7 +85,7 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Update K8s Manifest
         run: |
